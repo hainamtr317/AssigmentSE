@@ -1,10 +1,7 @@
 package assigmentse;
 
-public enum status {
-	RENT_READY,
-	HELD,
+public enum RentalStatusType{
 	RESERVED,
 	PICKED_UP,
 	EXCEPTIONAL
-	
 }

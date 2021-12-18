@@ -1,14 +1,19 @@
 package assigmentse;
 
 import java.util.Date;
+import java.util.List;
 
-public class Retal {
+public class Rental {
 	private String rental_number;
 	private Date pickup_date;
 	private Date return_date;
-	private rental_status status;
+	private RentalStatusType status;
 	private double rent_cost;
 	private String time;
+	private Car car;
+	private List<Payment> paymentList;
+	
+	
 	public String getRental_number() {
 		return rental_number;
 	}
@@ -27,10 +32,10 @@ public class Retal {
 	public void setReturn_date(Date return_date) {
 		this.return_date = return_date;
 	}
-	public rental_status getStatus() {
+	public RentalStatusType getStatus() {
 		return status;
 	}
-	public void setStatus(rental_status status) {
+	public void setStatus(RentalStatusType status) {
 		this.status = status;
 	}
 	public double getRent_cost() {
@@ -44,5 +49,17 @@ public class Retal {
 	}
 	public void setTime(String time) {
 		this.time = time;
+	}
+	public Car getCar() {
+		return car;
+	}
+	public void setCar(Car car) {
+		this.car = car;
+	}
+	public List<Payment> getPaymentList() {
+		return paymentList;
+	}
+	public void setPaymentList(List<Payment> paymentList) {
+		this.paymentList = paymentList;
 	} 
 }
