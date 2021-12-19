@@ -1,20 +1,20 @@
 package assigmentse;
 
 public class RentalGroup {
-	private String group;
+	private GroupType group;
 	private double price;
 	
-	public RentalGroup(String Group,double Price) {
+	public RentalGroup(GroupType type,double Price) {
 		this.price = Price;
-		this.group = Group;
+		this.group = type;
 		
 	}
 
-	public String getGroup() {
+	public GroupType getGroup() {
 		return group;
 	}
 
-	public void setGroup(String group) {
+	public void setGroup(GroupType group) {
 		this.group = group;
 	}
 

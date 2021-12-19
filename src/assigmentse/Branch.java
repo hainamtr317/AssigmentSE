@@ -7,6 +7,7 @@ private String branchNumber;
 private String branchLocation;
 private List<Branch> neightborList;
 private List<Car> carList;
+
 public Branch(String branchNumber,String branchLocation) {
 	this.setBranchNumber(branchNumber);
 	this.setBranchLocation(branchLocation);
