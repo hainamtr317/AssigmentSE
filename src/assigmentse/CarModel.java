@@ -6,6 +6,16 @@ public class CarModel {
 	private ControlType controlType;
 	private int door_num;
 	private String petrol_consume;
+	
+	
+	public CarModel(String num,String desc, ControlType type,int door,String consume) {
+		this.model_num= num;
+		this.model_desc =desc;
+		this.controlType= type;
+		this.door_num =door;
+		this.petrol_consume = consume;
+		
+	}
 	public String getModel_num() {
 		return model_num;
 	}

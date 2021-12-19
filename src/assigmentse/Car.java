@@ -8,8 +8,18 @@ public class Car {
 	private String color;
 	private CarStatusType status;
 	private String year_production;
-	private List<CarType> CarTypes;
+	private List<CarType> Cartypes;
 	private CarModel model;
+	
+	
+	public Car(String regNr,String color, String year,CarStatusType status,List<CarType> Cartypes){
+		this.regNr = regNr;
+		this.color =color;
+		this.year_production =year;
+		this.status =status;
+		this.Cartypes= Cartypes;
+		
+	}
 	public String getRegNr() {
 		return regNr;
 	}
@@ -38,7 +48,7 @@ public class Car {
 		return getCarTypes();
 	}
 	public void setCarTypes(List<CarType> CarTypes) {
-		this.CarTypes = CarTypes;
+		this.Cartypes = CarTypes;
 	}
 	public CarModel getModel() {
 		return model;

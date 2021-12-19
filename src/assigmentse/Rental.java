@@ -9,10 +9,24 @@ public class Rental {
 	private Date return_date;
 	private RentalStatusType status;
 	private double rent_cost;
-	private String time;
+	private String returntime;
+	private String pickuptime;
+	public Rental(String number, Date pickup, Date return_date, RentalStatusType status, double cost,
+			String returntime, String pickuptime) {
+		
+		this.rental_number = number;
+		this.pickup_date = pickup;
+		this.return_date = return_date;
+		this.status = status;
+		this.rent_cost = cost;
+		this.returntime = returntime;
+		this.pickuptime = pickuptime;
+	}
 	private Car car;
 	private List<Payment> paymentList;
 	
+	
+
 	
 	public String getRental_number() {
 		return rental_number;
@@ -44,12 +58,7 @@ public class Rental {
 	public void setRent_cost(double rent_cost) {
 		this.rent_cost = rent_cost;
 	}
-	public String getTime() {
-		return time;
-	}
-	public void setTime(String time) {
-		this.time = time;
-	}
+
 	public Car getCar() {
 		return car;
 	}
@@ -61,5 +70,17 @@ public class Rental {
 	}
 	public void setPaymentList(List<Payment> paymentList) {
 		this.paymentList = paymentList;
+	}
+	public String getReturntime() {
+		return returntime;
+	}
+	public void setReturntime(String returntime) {
+		this.returntime = returntime;
+	}
+	public String getPickuptime() {
+		return pickuptime;
+	}
+	public void setPickuptime(String pickuptime) {
+		this.pickuptime = pickuptime;
 	} 
 }
