@@ -1,6 +1,6 @@
 package assigmentse;
 
-public enum cartype{
+public enum CarType{
 	ECONOMY,
 	COMPACT_CAR,
 	MEDIUM_SIZE,

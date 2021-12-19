@@ -1,6 +1,6 @@
 package assigmentse;
 
-public enum controlType{
+public enum ControlType{
 	MANUAL,
 	AUTOMATIC
 }

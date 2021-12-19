@@ -6,6 +6,17 @@ public class Customer {
 	private String lastName;
 	private String phone;
 	private String email;
+	private Boolean blackList_status;
+	
+	public Customer(String license,String firstName,String lastName,String phone,String email){
+		this.driver_licence=license;
+		this.firstName= firstName;
+		this.lastName= lastName;
+		this.phone = phone;
+		this.email=email;
+		
+		
+	}
 	public String getDriver_licence() {
 		return driver_licence;
 	}
@@ -35,5 +46,11 @@ public class Customer {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public Boolean getBlackList_status() {
+		return blackList_status;
+	}
+	public void setBlackList_status(Boolean blackList_status) {
+		this.blackList_status = blackList_status;
 	}
 }
