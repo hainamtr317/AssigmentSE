@@ -1,21 +1,17 @@
 package assigmentse;
 
-public class RentalGroup {
+public class RentalGroup implements SimpleKey{
 	private GroupType group;
 	private double price;
-	
-	public RentalGroup(GroupType type,double Price) {
+
+	public RentalGroup(GroupType type, double Price) {
 		this.price = Price;
 		this.group = type;
-		
+
 	}
 
 	public GroupType getGroup() {
 		return group;
-	}
-
-	public void setGroup(GroupType group) {
-		this.group = group;
 	}
 
 	public double getPrice() {
@@ -25,5 +21,10 @@ public class RentalGroup {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	}
 
+	@Override
+	public GroupType getKey() {
+		// TODO Auto-generated method stub
+		return group;
+	}
+}
