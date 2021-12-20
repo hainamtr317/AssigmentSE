@@ -2,30 +2,25 @@ package assigmentse;
 
 import java.util.*;
 
-public class Car {
+public class Car implements SimpleKey{
 	
 	private String regNr;	
 	private String color;
 	private CarStatusType status;
 	private String year_production;
-	private List<CarType> Cartypes;
+	private List<CarType> CarTypes;
 	private CarModel model;
+	private Branch location;
 	
-	
-	public Car(String regNr,String color, String year,CarStatusType status,List<CarType> Cartypes){
+	public Car(String regNr,String color, String year,CarStatusType status,List<CarType> CarTypes, CarModel m){
 		this.regNr = regNr;
-		this.color =color;
+		this.color = color;
 		this.year_production =year;
-		this.status =status;
-		this.Cartypes= Cartypes;
-		
+		this.status = status;
+		this.CarTypes= CarTypes;
+		this.model = m;
 	}
-	public String getRegNr() {
-		return regNr;
-	}
-	public void setRegNr(String regNr) {
-		this.regNr = regNr;
-	}
+
 	public String getColor() {
 		return color;
 	}
@@ -35,26 +30,38 @@ public class Car {
 	public CarStatusType getStatus() {
 		return status;
 	}
-	public void setStatus(CarStatusType status) {
-		this.status = status;
-	}
+	
 	public String getYear_production() {
 		return year_production;
 	}
-	public void setYear_production(String year_production) {
-		this.year_production = year_production;
-	}
+	
 	public List<CarType> getCarTypes() {
-		return getCarTypes();
+		return CarTypes;
 	}
-	public void setCarTypes(List<CarType> CarTypes) {
-		this.Cartypes = CarTypes;
-	}
+	
 	public CarModel getModel() {
 		return model;
 	}
+	
+	
+	public Branch getLocation() {
+		return location;
+	}
+
 	public void setModel(CarModel model) {
 		this.model = model;
 	}
-
+	
+	public void setLocation(Branch location) {
+		this.location = location;
+	}
+	
+	public void setStatus(CarStatusType status) {
+		this.status = status;
+	}
+	@Override
+	public String getKey() {
+		return regNr;
+	}
+	
 }

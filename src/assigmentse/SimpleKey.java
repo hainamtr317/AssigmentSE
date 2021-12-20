@@ -1,6 +1,6 @@
 package assigmentse;
 
-public interface SimpleKey
+public interface SimpleKey<T> 
 {
-	public abstract String getKey();
+	public abstract T getKey();
 }

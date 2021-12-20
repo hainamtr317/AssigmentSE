@@ -1,13 +1,14 @@
 package assigmentse;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import assigmentse.CompositeKey;
 import assigmentse.SimpleKey;
 
 public class Helper
 {
-   public static <E extends SimpleKey> E search(Collection<E> collection, String key)
+   public static <E extends SimpleKey, T> E search(List<E> collection, T key)
    {
       for(E e: collection)
       {
