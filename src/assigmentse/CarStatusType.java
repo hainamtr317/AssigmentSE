@@ -5,6 +5,7 @@ public enum CarStatusType {
 	HELD,
 	RESERVED,
 	PICKED_UP,
+	RETURNED,
 	EXCEPTIONAL
 	
 }

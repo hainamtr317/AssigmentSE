@@ -69,7 +69,7 @@ public class VinaRentSystem {
 			System.out.println("The model number " + model_num +" has already existed. Please try enter a new model number.");
 	}
 	
-	public void addCar(String regNr, String color,String year, CarStatusType status, List<CarType>types, String branch_num, String model_num) {
+	public void addCar(String regNr, String color,String year, CarStatusType status, List<CarType>types, String mileage,String branch_num, String model_num) {
 		Car car = Helper.search(carList , regNr);
 		CarModel model = Helper.search(carModelList , model_num);
 		Branch branch = Helper.search(branchList, branch_num);
@@ -77,7 +77,7 @@ public class VinaRentSystem {
 		if(car == null) {
 			if(model != null) {
 				if(branch != null) {
-					Car a = new Car(regNr, color, year, status, types, model);
+					Car a = new Car(regNr, color, year, status, types, mileage, model);
 					a.setLocation(branch);
 					carList.add(a);
 					branch.setCar(car);
@@ -107,7 +107,8 @@ public class VinaRentSystem {
 								"Color: " + n.getColor() + 
 								"\n" + "Car Type: " + n.getCarTypes() + "\n" + 
 								"Year Of Production: " + n.getYear_production() + "\n" + 
-								"Car Status: " + n.getStatus() + "\n");
+								"Car Status: " + n.getStatus() + "\n" +
+								"Mileage: " + n.getMileage() + "\n");
 					}
 					else {
 						System.out.println("There is no car available.");
@@ -120,5 +121,22 @@ public class VinaRentSystem {
 		}
 		else
 			System.out.println("The branch number "+ branch.getBranchNumber() +" doesn't exist");
+	}
+	
+	public void addCustomer(String license, String firstName, String lastName, String phone, String email, boolean status) {
+		Customer customer = Helper.search(customerList, license);
+		if(customer == null) {
+			customerList.add(new Customer(license, firstName, lastName, phone, email, status));
+			System.out.println("The customer with the driver license number " + license +" has been added");
+		}
+		else
+			System.out.println("The customer with the driver license number " + license +" has already existed");
+	}
+	
+	public void recordReturnedCar(String regNr) {
+		Car car = Helper.search(carList, regNr);
+		if(car != null) {
+			car.setStatus(CarStatusType.RETURNED);
+		}
 	}
 }

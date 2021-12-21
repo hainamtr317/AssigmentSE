@@ -10,15 +10,17 @@ public class Car implements SimpleKey{
 	private String year_production;
 	private List<CarType> CarTypes;
 	private CarModel model;
+	private String mileage;
 	private Branch location;
 	
-	public Car(String regNr,String color, String year,CarStatusType status,List<CarType> CarTypes, CarModel m){
+	public Car(String regNr,String color, String year,CarStatusType status,List<CarType> CarTypes,String mileage, CarModel m){
 		this.regNr = regNr;
 		this.color = color;
 		this.year_production =year;
 		this.status = status;
 		this.CarTypes= CarTypes;
 		this.model = m;
+		this.mileage = mileage;
 	}
 
 	public String getColor() {
@@ -48,6 +50,11 @@ public class Car implements SimpleKey{
 		return location;
 	}
 
+	
+	public String getMileage() {
+		return mileage;
+	}
+
 	public void setModel(CarModel model) {
 		this.model = model;
 	}
@@ -58,6 +65,10 @@ public class Car implements SimpleKey{
 	
 	public void setStatus(CarStatusType status) {
 		this.status = status;
+	}
+	
+	public void setMileage(String m) {
+		this.mileage = m;
 	}
 	@Override
 	public String getKey() {

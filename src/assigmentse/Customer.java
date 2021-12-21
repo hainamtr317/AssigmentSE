@@ -1,6 +1,6 @@
 package assigmentse;
 
-public class Customer {
+public class Customer implements SimpleKey{
 	private String driver_licence;
 	private String firstName;
 	private String lastName;
@@ -8,13 +8,14 @@ public class Customer {
 	private String email;
 	private Boolean blackList_status;
 	
-	public Customer(String license,String firstName,String lastName,String phone,String email){
+	
+	public Customer(String license,String firstName,String lastName,String phone,String email, boolean status){
 		this.driver_licence=license;
 		this.firstName= firstName;
 		this.lastName= lastName;
 		this.phone = phone;
 		this.email=email;
-		
+		this.blackList_status = status;
 		
 	}
 	public String getDriver_licence() {
@@ -52,5 +53,10 @@ public class Customer {
 	}
 	public void setBlackList_status(Boolean blackList_status) {
 		this.blackList_status = blackList_status;
+	}
+	@Override
+	public String getKey() {
+		// TODO Auto-generated method stub
+		return driver_licence;
 	}
 }
