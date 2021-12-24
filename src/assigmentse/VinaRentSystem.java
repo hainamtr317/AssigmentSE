@@ -108,7 +108,9 @@ public class VinaRentSystem {
 								"\n" + "Car Type: " + n.getCarTypes() + "\n" + 
 								"Year Of Production: " + n.getYear_production() + "\n" + 
 								"Car Status: " + n.getStatus() + "\n" +
-								"Mileage: " + n.getMileage() + "\n");
+								"Mileage: " + n.getMileage() + "\n"
+								);
+								
 					}
 					else {
 						System.out.println("There is no car available.");
@@ -133,10 +135,18 @@ public class VinaRentSystem {
 			System.out.println("The customer with the driver license number " + license +" has already existed");
 	}
 	
-	public void recordReturnedCar(String regNr) {
+	public void recordReturnedCar(String regNr,String BranchNumber,String mileage) {
 		Car car = Helper.search(carList, regNr);
+		Branch br = Helper.search(branchList, BranchNumber);
 		if(car != null) {
+			if(br!= null) {
 			car.setStatus(CarStatusType.RETURNED);
+			car.setMileage(mileage);
+			car.setLocation(br);
+			}
+			System.out.println(" the"+BranchNumber+" isn't exits in branchList");
+			
 		}
+		System.out.println(" the "+regNr+"car isn't exits in carList");
 	}
 }

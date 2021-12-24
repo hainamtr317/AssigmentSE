@@ -22,6 +22,7 @@ public class Main {
 		system.addCar("932413", "RED", "2014", CarStatusType.RENT_READY, Arrays.asList(CarType.STATION_WAGON,CarType.ECONOMY, CarType.MEDIUM_SIZE), "2235km","123" , "1");
 		
 		system.getListOfCars("123", GroupType.Group_A);
+	
 	}
 	
 	
